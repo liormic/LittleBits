@@ -3,6 +3,7 @@ package com.ely.littlebits
 import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
+import androidx.room.OnConflictStrategy.IGNORE
 import androidx.room.Query
 import kotlinx.coroutines.flow.Flow
 
@@ -14,8 +15,8 @@ interface RecipesDao {
     @Query("SELECT * FROM recipe WHERE id LIKE :id")
     fun findById(id: String): Flow<Recipe>
 
-    @Insert
-    suspend fun insert(vararg recipe: Recipe)
+    @Insert(onConflict = IGNORE)
+    suspend fun insert(vararg recipe: List<Recipe>)
 
     @Delete
     suspend fun delete(recipe: Recipe)
