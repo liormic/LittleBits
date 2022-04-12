@@ -2,11 +2,12 @@ package com.ely.littlebits
 
 import androidx.room.Room
 import org.koin.androidx.viewmodel.dsl.viewModel
+import org.koin.core.module.Module
 import org.koin.dsl.module
 
 class AppModule {
 
-    fun getAppModule() {
+    fun getAppModule(): Module {
         val appModule = module {
             fun provideDB(): AppDB {
                 return Room.databaseBuilder(
@@ -16,6 +17,11 @@ class AppModule {
             }
 
             single { provideDB() }
+//            single {
+//                val database = provideDB()
+//                database.recipesDao()
+//            }
+
             single {
                 val database = get<AppDB>()
                 database.recipesDao()
@@ -27,5 +33,6 @@ class AppModule {
 
             viewModel { MainActivityViewModel(get()) }
         }
+        return appModule
     }
 }

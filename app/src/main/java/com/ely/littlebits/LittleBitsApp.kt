@@ -2,13 +2,18 @@ package com.ely.littlebits
 
 import android.app.Application
 import android.content.Context
+import com.facebook.drawee.backends.pipeline.Fresco
 import org.koin.core.context.startKoin
+
 class LittleBitsApp : Application() {
+
 
     override fun onCreate() {
         super.onCreate()
         appContext = this
-        startKoin { AppModule().getAppModule() }
+        startKoin { modules(AppModule().getAppModule()) }
+        Fresco.initialize(this);
+
     }
 
     companion object {

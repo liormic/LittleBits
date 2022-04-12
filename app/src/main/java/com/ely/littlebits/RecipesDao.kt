@@ -8,7 +8,7 @@ import androidx.room.Query
 import kotlinx.coroutines.flow.Flow
 
 @Dao
-interface RecipesDao {
+ interface RecipesDao {
     @Query("SELECT * FROM recipe")
     fun getAll(): Flow<List<Recipe>>
 
@@ -16,8 +16,8 @@ interface RecipesDao {
     fun findById(id: String): Flow<Recipe>
 
     @Insert(onConflict = IGNORE)
-    suspend fun insert(vararg recipe: List<Recipe>)
+   suspend fun insert( recipe: List<Recipe>)
 
     @Delete
-    suspend fun delete(recipe: Recipe)
+    fun delete(recipe: Recipe)
 }

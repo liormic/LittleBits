@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:elevation="2dp"
+        app:cardCornerRadius="6dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/item_margin"
+                android:layout_marginTop="8dp"
+                android:text="333333333"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/headline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/name"
+                android:layout_margin="@dimen/item_margin"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/headline"
+                android:layout_margin="@dimen/item_margin"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/difficulty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/headline"
+                android:layout_margin="@dimen/item_margin"
+                android:layout_toEndOf="@id/time"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/calories"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/headline"
+                android:layout_margin="@dimen/item_margin"
+                android:layout_toEndOf="@id/difficulty"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/fats"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/time"
+                android:layout_margin="@dimen/item_margin"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/carbs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/difficulty"
+                android:layout_margin="@dimen/item_margin"
+                android:layout_toEndOf="@id/fats"
+                android:textSize="14sp" />
+
+
+            <TextView
+                android:id="@+id/proteins"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/calories"
+                android:layout_margin="@dimen/item_margin"
+                android:layout_toEndOf="@id/carbs"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/fats"
+                android:layout_margin="@dimen/item_margin"
+                android:textSize="14sp" />
+
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/image"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_below="@id/description"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="@dimen/item_margin"
+                android:paddingBottom="@dimen/item_margin"
+                app:placeholderImage="@drawable/plate" />
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
