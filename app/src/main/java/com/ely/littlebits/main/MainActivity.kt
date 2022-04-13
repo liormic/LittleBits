@@ -1,4 +1,4 @@
-package com.ely.littlebits
+package com.ely.littlebits.main
 
 import android.os.Bundle
 import android.view.Menu
@@ -6,6 +6,8 @@ import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.ely.littlebits.*
+import com.ely.littlebits.model.Recipe
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.component.KoinComponent
 

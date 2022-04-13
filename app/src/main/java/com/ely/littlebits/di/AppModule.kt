@@ -1,7 +1,11 @@
-package com.ely.littlebits
+package com.ely.littlebits.di
 
 import androidx.room.Room
 import com.ely.littlebits.Constants.DB_NAME
+import com.ely.littlebits.LittleBitsApp
+import com.ely.littlebits.main.MainActivityRepository
+import com.ely.littlebits.main.MainActivityViewModel
+import com.ely.littlebits.db.AppDB
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.core.module.Module
 import org.koin.dsl.module

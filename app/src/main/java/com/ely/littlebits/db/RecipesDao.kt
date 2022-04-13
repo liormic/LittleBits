@@ -1,9 +1,10 @@
-package com.ely.littlebits
+package com.ely.littlebits.db
 
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy.IGNORE
 import androidx.room.Query
+import com.ely.littlebits.model.Recipe
 import kotlinx.coroutines.flow.Flow
 
 @Dao
