@@ -9,7 +9,7 @@ import com.ely.littlebits.LittleBitsApp.Companion.appContext
 import com.facebook.drawee.view.SimpleDraweeView
 
 
-class RecipesAdapter(val recipes: List<Recipe>) :
+class RecipesAdapter(private val recipes: List<Recipe>) :
     RecyclerView.Adapter<RecipesAdapter.ViewHolder>() {
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -22,6 +22,7 @@ class RecipesAdapter(val recipes: List<Recipe>) :
         val tvFats: TextView = view.findViewById(R.id.fats)
         val tvProteins: TextView = view.findViewById(R.id.proteins)
         val tvDescription: TextView = view.findViewById(R.id.description)
+        val tvCountry: TextView = view.findViewById(R.id.country)
         val ivDraweeView: SimpleDraweeView = view.findViewById(R.id.image)
     }
 
@@ -33,9 +34,12 @@ class RecipesAdapter(val recipes: List<Recipe>) :
 
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
 
-        viewHolder.tvName.text = recipes[position].name
-        viewHolder.tvTime.text = recipes[position].time
-        viewHolder.tvHeadline.text = recipes[position].headline
+        viewHolder.tvName.setTextOrGone(recipes[position].name)
+        viewHolder.tvTime.setTextOrGone(recipes[position].time)
+        viewHolder.tvCountry.setTextOrGone(recipes[position].country)
+        viewHolder.tvHeadline.setTextOrGone(recipes[position].headline)
+        viewHolder.tvDescription.setTextOrGone(recipes[position].description)
+
         (appContext.getString(R.string.carbs) + recipes[position].carbos).also {
             viewHolder.tvCarbs.text = it
         }
@@ -50,11 +54,10 @@ class RecipesAdapter(val recipes: List<Recipe>) :
             viewHolder.tvDifficulty.text = it
         }
 
-        (appContext.getString(R.string.calories) + recipes[position].calories.toString()).also {
+        (appContext.getString(R.string.calories) + recipes[position].calories).also {
             viewHolder.tvCalories.text = it
         }
 
-        viewHolder.tvDescription.text = recipes[position].description
         viewHolder.ivDraweeView.setImageURI(recipes[position].image)
     }
 

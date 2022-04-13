@@ -1,8 +1,10 @@
 <resources>
     <string name="app_name">LittleBits</string>
-    <string name="carbs">Carbs:\u0020</string>
-    <string name="fats">Fats:\u0020</string>
-    <string name="proteins">Proteins:\u0020</string>
-    <string name="difficulty">Difficulty:\u0020</string>
-    <string name="calories">Calories:\u0020</string>
+    <string name="carbs">Carbs\u0020</string>
+    <string name="fats">Fats\u0020</string>
+    <string name="proteins">Proteins\u0020</string>
+    <string name="difficulty">Difficulty\u0020</string>
+    <string name="calories">Calories\u0020</string>
+    <string name="sort_by">Sort by</string>
+    <string name="time">Time</string>
 </resources>

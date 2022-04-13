@@ -1,9 +1,9 @@
 package com.ely.littlebits
 
-§import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.google.gson.Gson
+import com.google.gson.GsonBuilder
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
@@ -32,7 +32,7 @@ class MainActivityViewModel(private val mainActivityRepository: MainActivityRepo
             LittleBitsApp.appContext.assets.open(Constants.JSON_FILE_NAME).bufferedReader()
                 .use { it.readText() }
         if (jsonFile.isNotEmpty()) {
-            return Gson().fromJson(jsonFile, Recipes::class.java).recipes
+            return GsonBuilder().serializeNulls().create().fromJson(jsonFile, Recipes::class.java).recipes
         }
         return mutableListOf()
     }

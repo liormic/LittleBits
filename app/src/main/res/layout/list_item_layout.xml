@@ -95,10 +95,17 @@
                 android:id="@+id/description"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/fats"
+                android:layout_below="@id/country"
                 android:layout_margin="@dimen/item_margin"
                 android:textSize="14sp" />
 
+            <TextView
+                android:id="@+id/country"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/proteins"
+                android:layout_margin="@dimen/item_margin"
+                android:textSize="14sp" />
 
             <com.facebook.drawee.view.SimpleDraweeView
                 android:id="@+id/image"

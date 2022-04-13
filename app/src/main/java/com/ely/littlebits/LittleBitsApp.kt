@@ -7,13 +7,11 @@ import org.koin.core.context.startKoin
 
 class LittleBitsApp : Application() {
 
-
     override fun onCreate() {
         super.onCreate()
         appContext = this
         startKoin { modules(AppModule().getAppModule()) }
         Fresco.initialize(this);
-
     }
 
     companion object {
