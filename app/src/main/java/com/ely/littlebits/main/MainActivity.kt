@@ -20,6 +20,10 @@ class MainActivity : AppCompatActivity(), KoinComponent {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         rv = findViewById(R.id.rv)
+        //Since we have a raw json file this seems unnecessary but in real life
+        //we would have done a network call and insert these items to DB
+        //Since the insert strategy is IGNORE , we will not insert the same items twice
+        //thus saving processing time
         mainActivityViewModel.insertRecipes()
         mainActivityViewModel.recipesMutableLiveData.observe(this, { recipesList ->
             initRv(recipesList)
